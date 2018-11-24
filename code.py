@@ -9,6 +9,11 @@ class Quotes(object):
         pass
 
     def get_data(self, p=1):
+        """
+        Extract "quotes" data from a specfic page.
+
+        :param int p: "page" number to extract information from.
+        """
         data = {"status_code": "ok", "data": {}}
         res = requests.get(url="http://quotes.toscrape.com/page/{0}/".format(str(p)))
         data["status"] = res.status_code
